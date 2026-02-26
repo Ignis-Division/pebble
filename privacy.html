@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy — ModFilter Bot</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=Syne:wght@400;600;700;800&display=swap');
+
+    :root {
+      --bg: #0d0f17;
+      --surface: #12141e;
+      --border: #1e2130;
+      --accent: #5865f2;
+      --accent2: #34d399;
+      --text: #e2e8f0;
+      --muted: #6b7280;
+      --subtle: #374151;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Syne', sans-serif;
+      line-height: 1.75;
+      min-height: 100vh;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(88,101,242,0.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(88,101,242,0.025) 1px, transparent 1px);
+      background-size: 48px 48px;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .wrap {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 64px 32px 96px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .site-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 56px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .logo {
+      width: 40px; height: 40px;
+      background: var(--accent);
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 20px;
+      flex-shrink: 0;
+    }
+
+    .site-name { font-weight: 800; font-size: 17px; letter-spacing: -0.3px; }
+    .site-tag {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 10px; color: var(--muted);
+      letter-spacing: 2px; text-transform: uppercase;
+    }
+
+    .doc-label {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 11px; letter-spacing: 3px;
+      text-transform: uppercase; color: var(--accent2);
+      margin-bottom: 12px;
+    }
+
+    h1 {
+      font-size: clamp(28px, 5vw, 40px);
+      font-weight: 800; letter-spacing: -1px;
+      line-height: 1.1; margin-bottom: 16px;
+    }
+
+    .meta {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 12px; color: var(--muted);
+      margin-bottom: 48px; padding-bottom: 32px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .tldr {
+      background: rgba(52, 211, 153, 0.06);
+      border: 1px solid rgba(52, 211, 153, 0.2);
+      border-radius: 12px;
+      padding: 20px 24px;
+      margin-bottom: 48px;
+    }
+
+    .tldr-label {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 10px; letter-spacing: 2px;
+      text-transform: uppercase; color: var(--accent2);
+      margin-bottom: 10px;
+    }
+
+    .tldr p { color: #a7f3d0; font-size: 14px; margin: 0; }
+
+    section { margin-bottom: 40px; }
+
+    h2 {
+      font-size: 17px; font-weight: 700;
+      color: var(--text); margin-bottom: 12px;
+      display: flex; align-items: center; gap: 10px;
+    }
+
+    h2::before {
+      content: '';
+      display: inline-block;
+      width: 4px; height: 18px;
+      background: var(--accent2);
+      border-radius: 2px; flex-shrink: 0;
+    }
+
+    p { color: #94a3b8; font-size: 15px; margin-bottom: 12px; }
+
+    ul { list-style: none; padding: 0; margin: 8px 0 12px; }
+
+    ul li {
+      color: #94a3b8; font-size: 15px;
+      padding: 4px 0 4px 20px; position: relative;
+    }
+
+    ul li::before { content: '—'; position: absolute; left: 0; color: var(--subtle); }
+
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 16px 0;
+      font-size: 14px;
+    }
+
+    .data-table th {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 10px 14px;
+      text-align: left;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .data-table td {
+      border: 1px solid var(--border);
+      padding: 10px 14px;
+      color: #94a3b8;
+      vertical-align: top;
+    }
+
+    .data-table tr:hover td { background: var(--surface); }
+
+    .badge {
+      display: inline-block;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 10px;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-weight: 600;
+    }
+
+    .badge-no { background: rgba(52,211,153,0.1); color: #34d399; border: 1px solid rgba(52,211,153,0.3); }
+    .badge-temp { background: rgba(234,179,8,0.1); color: #eab308; border: 1px solid rgba(234,179,8,0.3); }
+
+    .callout {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--accent2);
+      border-radius: 8px;
+      padding: 16px 20px;
+      margin: 16px 0;
+    }
+
+    .callout p { margin: 0; font-size: 14px; }
+
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .footer {
+      margin-top: 64px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 11px;
+      color: var(--muted);
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .footer a { color: var(--muted); }
+    .footer a:hover { color: var(--text); }
+  </style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="site-header">
+    <div class="logo">🛡️</div>
+    <div>
+      <div class="site-name">ModFilter</div>
+      <div class="site-tag">Discord Bot</div>
+    </div>
+  </header>
+
+  <div class="doc-label">Legal</div>
+  <h1>Privacy Policy</h1>
+  <div class="meta">
+    Effective date: February 25, 2026 &nbsp;·&nbsp; Last updated: February 25, 2026
+  </div>
+
+  <div class="tldr">
+    <div class="tldr-label">TL;DR</div>
+    <p>
+      ModFilter reads member data directly from Discord to perform moderation actions.
+      It does not store, sell, or share your personal data. No data is retained after
+      a moderation action is complete.
+    </p>
+  </div>
+
+  <section>
+    <h2>1. Who We Are</h2>
+    <p>
+      ModFilter ("the Bot") is a Discord moderation bot developed and operated by an
+      independent developer ("the developer"). This Privacy Policy explains what data
+      the Bot accesses, why, and how it is handled.
+    </p>
+  </section>
+
+  <section>
+    <h2>2. Data We Access</h2>
+    <p>
+      The Bot accesses the following data via the Discord API in order to function.
+      This data is accessed in real-time and is <strong>not stored</strong> persistently.
+    </p>
+
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Data</th>
+          <th>Why it's accessed</th>
+          <th>Stored?</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Discord User ID</td>
+          <td>To identify members for moderation actions</td>
+          <td><span class="badge badge-no">No</span></td>
+        </tr>
+        <tr>
+          <td>Display name / username</td>
+          <td>To display member information in filter results</td>
+          <td><span class="badge badge-no">No</span></td>
+        </tr>
+        <tr>
+          <td>Profile avatar (presence or absence)</td>
+          <td>To filter members without a profile photo</td>
+          <td><span class="badge badge-no">No</span></td>
+        </tr>
+        <tr>
+          <td>Server roles</td>
+          <td>To filter members by role</td>
+          <td><span class="badge badge-no">No</span></td>
+        </tr>
+        <tr>
+          <td>Server join date</td>
+          <td>To filter members by how recently they joined</td>
+          <td><span class="badge badge-no">No</span></td>
+        </tr>
+        <tr>
+          <td>Guild (server) ID</td>
+          <td>To maintain the whitelist of approved servers</td>
+          <td><span class="badge badge-temp">Yes — whitelist only</span></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="callout">
+      <p>
+        The only data stored on disk is a list of approved server (guild) IDs and their
+        access expiry dates. No personal user data is ever written to disk.
+      </p>
+    </div>
+  </section>
+
+  <section>
+    <h2>3. How We Use Data</h2>
+    <p>Accessed data is used solely for the following purposes:</p>
+    <ul>
+      <li>Displaying filtered member lists to server moderators</li>
+      <li>Executing moderation actions (kick, ban, mute, role removal, DM warning)</li>
+      <li>Logging moderation events to a designated developer log channel</li>
+    </ul>
+    <p>Data is never used for advertising, analytics, profiling, or any commercial purpose.</p>
+  </section>
+
+  <section>
+    <h2>4. Data Sharing</h2>
+    <p>
+      We do not sell, rent, or share any data with third parties. Member data accessed
+      through the Discord API is not transmitted to any external service.
+    </p>
+    <p>
+      The Bot operates entirely within the Discord platform using Discord's own API.
+      All data handling is subject to <a href="https://discord.com/privacy" target="_blank">Discord's Privacy Policy</a>
+      in addition to this policy.
+    </p>
+  </section>
+
+  <section>
+    <h2>5. Data Retention</h2>
+    <p>
+      Member data (usernames, IDs, roles, avatars, join dates) is accessed in real-time
+      from Discord and is never written to any database or file. It exists only transiently
+      in memory during the execution of a command and is discarded immediately after.
+    </p>
+    <p>
+      The only persistent data stored is:
+    </p>
+    <ul>
+      <li>Approved server IDs and their whitelist expiry dates (stored in a local JSON file)</li>
+    </ul>
+    <p>
+      This data contains no personal user information and is deleted automatically when
+      a server's whitelist expires or when the server is removed.
+    </p>
+  </section>
+
+  <section>
+    <h2>6. Security</h2>
+    <p>
+      The Bot is hosted on a private server accessible only to the developer. No member
+      data is exposed via any public-facing API or web interface. The whitelist file
+      containing server IDs is stored locally and not transmitted externally.
+    </p>
+  </section>
+
+  <section>
+    <h2>7. Children's Privacy</h2>
+    <p>
+      The Bot is not directed at children under the age of 13. We do not knowingly collect
+      any information from children. If you believe a child under 13 has used this Bot,
+      please contact us so we can take appropriate action.
+    </p>
+  </section>
+
+  <section>
+    <h2>8. Your Rights</h2>
+    <p>
+      Since no personal data is stored by the Bot, there is no personal data to access,
+      correct, or delete. If you have concerns about data processed by Discord itself,
+      please refer to <a href="https://discord.com/privacy" target="_blank">Discord's Privacy Policy</a>.
+    </p>
+    <p>
+      To request removal of your server from the whitelist or to ask any privacy-related
+      questions, contact the developer via Discord.
+    </p>
+  </section>
+
+  <section>
+    <h2>9. Changes to This Policy</h2>
+    <p>
+      This Privacy Policy may be updated from time to time. The effective date at the top
+      of this page will be updated accordingly. Continued use of the Bot after changes
+      are posted constitutes acceptance of the revised policy.
+    </p>
+  </section>
+
+  <section>
+    <h2>10. Contact</h2>
+    <p>
+      For privacy questions or concerns, contact the developer via Discord or through the
+      contact information listed on the Bot's Discord Developer Portal page.
+    </p>
+  </section>
+
+  <footer class="footer">
+    <span>© 2026 ModFilter Bot · All rights reserved</span>
+    <span>
+      <a href="tos.html">Terms of Service</a>
+    </span>
+  </footer>
+
+</div>
+</body>
+</html>

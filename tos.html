@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Terms of Service — ModFilter Bot</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=Syne:wght@400;600;700;800&display=swap');
+
+    :root {
+      --bg: #0d0f17;
+      --surface: #12141e;
+      --border: #1e2130;
+      --accent: #5865f2;
+      --text: #e2e8f0;
+      --muted: #6b7280;
+      --subtle: #374151;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Syne', sans-serif;
+      line-height: 1.75;
+      min-height: 100vh;
+    }
+
+    /* subtle grid bg */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(88,101,242,0.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(88,101,242,0.025) 1px, transparent 1px);
+      background-size: 48px 48px;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .wrap {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 64px 32px 96px;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* header */
+    .site-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 56px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .logo {
+      width: 40px; height: 40px;
+      background: var(--accent);
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 20px;
+      flex-shrink: 0;
+    }
+
+    .site-name {
+      font-weight: 800;
+      font-size: 17px;
+      letter-spacing: -0.3px;
+    }
+
+    .site-tag {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 10px;
+      color: var(--muted);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    /* doc header */
+    .doc-label {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 12px;
+    }
+
+    h1 {
+      font-size: clamp(28px, 5vw, 40px);
+      font-weight: 800;
+      letter-spacing: -1px;
+      line-height: 1.1;
+      margin-bottom: 16px;
+    }
+
+    .meta {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 12px;
+      color: var(--muted);
+      margin-bottom: 48px;
+      padding-bottom: 32px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    /* sections */
+    section {
+      margin-bottom: 40px;
+    }
+
+    h2 {
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    h2::before {
+      content: '';
+      display: inline-block;
+      width: 4px;
+      height: 18px;
+      background: var(--accent);
+      border-radius: 2px;
+      flex-shrink: 0;
+    }
+
+    p {
+      color: #94a3b8;
+      font-size: 15px;
+      margin-bottom: 12px;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 8px 0 12px;
+    }
+
+    ul li {
+      color: #94a3b8;
+      font-size: 15px;
+      padding: 4px 0 4px 20px;
+      position: relative;
+    }
+
+    ul li::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: var(--subtle);
+    }
+
+    .callout {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--accent);
+      border-radius: 8px;
+      padding: 16px 20px;
+      margin: 16px 0;
+    }
+
+    .callout p {
+      margin: 0;
+      font-size: 14px;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover { text-decoration: underline; }
+
+    .footer {
+      margin-top: 64px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 11px;
+      color: var(--muted);
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .footer a { color: var(--muted); }
+    .footer a:hover { color: var(--text); }
+  </style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="site-header">
+    <div class="logo">🛡️</div>
+    <div>
+      <div class="site-name">ModFilter</div>
+      <div class="site-tag">Discord Bot</div>
+    </div>
+  </header>
+
+  <div class="doc-label">Legal</div>
+  <h1>Terms of Service</h1>
+  <div class="meta">
+    Effective date: February 25, 2026 &nbsp;·&nbsp; Last updated: February 25, 2026
+  </div>
+
+  <section>
+    <h2>1. Acceptance of Terms</h2>
+    <p>
+      By adding ModFilter ("the Bot") to your Discord server or using any of its features,
+      you agree to be bound by these Terms of Service. If you do not agree, you must remove
+      the Bot from your server immediately.
+    </p>
+    <p>
+      These Terms apply to all server administrators, moderators, and members of any server
+      where the Bot is installed.
+    </p>
+  </section>
+
+  <section>
+    <h2>2. Description of Service</h2>
+    <p>
+      ModFilter is a Discord moderation bot that provides server administrators and moderators
+      with tools to filter, list, and take moderation actions against server members.
+      Features include:
+    </p>
+    <ul>
+      <li>Filtering members by criteria such as missing profile photo, role, or join date</li>
+      <li>Moderation actions including kick, ban, mute/timeout, role removal, and DM warnings</li>
+      <li>Bulk moderation tools with dry-run preview functionality</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>3. Eligibility and Access</h2>
+    <p>
+      The Bot is invite-only. Access is granted on a per-server basis at the sole discretion
+      of the developer. The developer reserves the right to revoke access to any server at
+      any time without prior notice.
+    </p>
+    <p>
+      You must be at least 13 years of age (or the minimum age required by Discord's Terms of
+      Service in your jurisdiction) to use this Bot.
+    </p>
+  </section>
+
+  <section>
+    <h2>4. Permitted Use</h2>
+    <p>You may use the Bot to:</p>
+    <ul>
+      <li>Moderate your own Discord server in accordance with Discord's Community Guidelines</li>
+      <li>Filter and review member lists for legitimate moderation purposes</li>
+      <li>Take moderation actions against members who violate your server's rules</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>5. Prohibited Use</h2>
+    <p>You may not use the Bot to:</p>
+    <ul>
+      <li>Target, harass, or discriminate against individuals based on protected characteristics</li>
+      <li>Conduct mass bans or kicks for purposes unrelated to legitimate server moderation</li>
+      <li>Violate Discord's Terms of Service or Community Guidelines</li>
+      <li>Abuse moderation tools to harm members without valid cause</li>
+      <li>Attempt to reverse-engineer, exploit, or abuse the Bot's functionality</li>
+    </ul>
+    <div class="callout">
+      <p>Misuse of the Bot's moderation capabilities may result in immediate access revocation
+      and may be reported to Discord Trust &amp; Safety.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>6. Availability</h2>
+    <p>
+      The Bot is provided on an "as is" and "as available" basis. The developer makes no
+      guarantee of uptime, reliability, or continued availability. The service may be
+      modified, suspended, or discontinued at any time without notice.
+    </p>
+  </section>
+
+  <section>
+    <h2>7. Disclaimer of Warranties</h2>
+    <p>
+      To the fullest extent permitted by law, the Bot is provided without warranties of any
+      kind, whether express or implied. The developer is not responsible for any moderation
+      actions taken using the Bot, including unintended kicks, bans, or timeouts resulting
+      from operator error.
+    </p>
+  </section>
+
+  <section>
+    <h2>8. Limitation of Liability</h2>
+    <p>
+      In no event shall the developer be liable for any indirect, incidental, or consequential
+      damages arising from the use or inability to use the Bot, including but not limited to
+      loss of server members or community disruption.
+    </p>
+  </section>
+
+  <section>
+    <h2>9. Changes to These Terms</h2>
+    <p>
+      The developer may update these Terms at any time. Continued use of the Bot after
+      changes are posted constitutes acceptance of the revised Terms. It is your responsibility
+      to review these Terms periodically.
+    </p>
+  </section>
+
+  <section>
+    <h2>10. Contact</h2>
+    <p>
+      For questions about these Terms, please contact the developer via Discord or at the
+      contact information provided on the Bot's Discord Developer Portal listing.
+    </p>
+  </section>
+
+  <footer class="footer">
+    <span>© 2026 ModFilter Bot · All rights reserved</span>
+    <span>
+      <a href="privacy.html">Privacy Policy</a>
+    </span>
+  </footer>
+
+</div>
+</body>
+</html>
